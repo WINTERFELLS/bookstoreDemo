@@ -1,0 +1,5 @@
+package com.edu.seu.dpf.bookstore.category.web.servlet;
+
+public class CategoryServlet {
+
+}

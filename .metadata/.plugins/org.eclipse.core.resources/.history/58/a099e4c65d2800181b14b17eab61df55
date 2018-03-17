@@ -1,0 +1,7 @@
+package com.edu.seu.dpf.bookstore.book.service;
+
+import com.edu.seu.dpf.bookstore.book.dao.BookDao;
+
+public class BookService {
+	private BookDao bookDao = new BookDao();
+}

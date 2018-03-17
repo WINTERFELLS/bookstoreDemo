@@ -1,0 +1,10 @@
+package com.edu.seu.dpf.bookstore.user.service;
+
+import com.edu.seu.dpf.bookstore.user.dao.UserDao;
+
+/*
+ * User业务层
+ */
+public class UserService {
+	private UserDao userDao = new UserDao();
+}

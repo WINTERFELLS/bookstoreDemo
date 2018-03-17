@@ -1,0 +1,148 @@
+package com.edu.seu.dpf.bookstore.user.servlet;
+
+import java.io.IOException;
+import java.text.MessageFormat;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
+
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.edu.seu.dpf.bookstore.cart.domain.Cart;
+import com.edu.seu.dpf.bookstore.user.domain.User;
+import com.edu.seu.dpf.bookstore.user.service.UserException;
+import com.edu.seu.dpf.bookstore.user.service.UserService;
+
+import cn.itcast.commons.CommonUtils;
+import cn.itcast.mail.Mail;
+import cn.itcast.mail.MailUtils;
+import cn.itcast.servlet.BaseServlet;
+
+/*
+ * User表述层
+ */
+public class UserServlet extends BaseServlet {
+	private UserService userService = new UserService();
+	
+	public String login(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		User form = CommonUtils.toBean(request.getParameterMap(), User.class);
+		try {
+			User user = userService.login(form);
+			request.getSession().setAttribute("session_user", user);
+			/*
+			 * 给用户添加购物车，向session中保存cart对象
+			 */
+			request.getSession().setAttribute("cart", new Cart());
+			return "r:index.jsp";
+		} catch (UserException e) {
+			request.setAttribute("msg", e.getMessage());
+			request.setAttribute("form", form);
+			return "f:jsps/user/login.jsp";
+		}
+	}
+	
+	public String quit(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		request.getSession().invalidate();
+		return "r:jsps/user/login.jsp";
+	}
+	
+	public String active(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		String code = request.getParameter("code");
+		try {
+			userService.active(code);
+			request.setAttribute("msg", "激活成功！");
+		} catch (UserException e) {
+			request.setAttribute("msg", e.getMessage());
+		}
+		return "f:jsps/user/msg.jsp";
+	}
+	
+	/*
+	 * 注册功能
+	 */
+	public String regist(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		//封装表单数据
+		User form = CommonUtils.toBean(request.getParameterMap(), User.class);
+		//补全
+		form.setUid(CommonUtils.uuid());
+		form.setCode(CommonUtils.uuid() + CommonUtils.uuid());
+		/*
+		 * 输入校验
+		 * 创建一个Map用来封装错误信息,进行校验,并判断存在错误信息
+		 */
+		Map<String,String> errors = new HashMap<>();
+		String username = form.getUsername();
+		if(username == null || username.trim().isEmpty()) {
+			errors.put("username", "用户名不能为空！");
+		}else if(username.length() < 3 || username.length() > 10) {
+			errors.put("username", "用户名长度必须在3-10之间");
+		}
+		
+		String password = form.getPassword();
+		if(password == null || password.trim().isEmpty()) {
+			errors.put("password", "密码不能为空！");
+		}else if(password.length() < 3 || password.length() > 10) {
+			errors.put("password", "密码长度必须在3-10之间");
+		}
+		
+		String email = form.getEmail();
+		if(email == null || email.trim().isEmpty()) {
+			errors.put("email", "邮箱不能为空！");
+		}else if(!email.matches("\\w+@\\w+\\.\\w+")) {
+			errors.put("email", "Email格式错误！");
+		}
+		
+		if(errors.size()>0) {
+			//保存错误信息，保存表单数据，转发到regist.jsp
+			request.setAttribute("errors", errors);
+			request.setAttribute("form", form);
+			return "f:jsps/user/regist.jsp";
+		}
+		
+		/*
+		 * 调用service的regist方法
+		 */
+		try {
+			userService.regist(form);
+		}catch (UserException e) {
+			request.setAttribute("msg", e.getMessage());
+			request.setAttribute("form", form);
+			return "f:jsps/user/regist.jsp";
+		}
+		
+		/*
+		 * userService执行成功，发送邮件，没有异常保存成功信息，转发到msg.jsp
+		 */
+		//准备配置文件
+		Properties props = new Properties();
+		props.load(this.getClass().getClassLoader().
+				getResourceAsStream("email_template.properties"));
+		String host = props.getProperty("host");
+		String uname = props.getProperty("uname");
+		String pwd = props.getProperty("pwd");
+		String from = props.getProperty("from");
+		String to = form.getEmail();
+		String subject = props.getProperty("subject");
+		String content = props.getProperty("content");
+		content = MessageFormat.format(content, form.getCode());//替换占位符
+		
+		Session session = MailUtils.createSession(host, uname, pwd);
+		Mail mail = new Mail(from, to, subject, content);
+		try {
+			MailUtils.send(session, mail);
+		} catch (MessagingException e) {
+			e.printStackTrace();
+		};
+		
+		request.setAttribute("msg", "注册成功！到邮箱激活！");
+		return "f:jsps/msg.jsp";
+	}
+}

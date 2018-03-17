@@ -1,0 +1,7 @@
+package com.edu.seu.dpf.bookstore.category.service;
+
+import com.edu.seu.dpf.bookstore.category.dao.CategoryDao;
+
+public class CategoryService {
+	private CategoryDao categoryDao = new CategoryDao();
+}

@@ -1,0 +1,59 @@
+package com.edu.seu.dpf.bookstore.user.servlet;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.edu.seu.dpf.bookstore.user.domain.User;
+import com.edu.seu.dpf.bookstore.user.service.UserService;
+
+import cn.itcast.commons.CommonUtils;
+import cn.itcast.servlet.BaseServlet;
+
+/*
+ * User表述层
+ */
+public class UserServlet extends BaseServlet {
+	private UserService userService = new UserService();
+	
+	/*
+	 * 注册功能
+	 */
+	public void regist(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		//封装表单数据
+		User form = CommonUtils.toBean(request.getParameterMap(), User.class);
+		//补全
+		form.setUid(CommonUtils.uuid());
+		form.setCode(CommonUtils.uuid() + CommonUtils.uuid());
+		/*
+		 * 输入校验
+		 * 创建一个Map用来封装错误信息,进行校验
+		 */
+		Map<String,String> errors = new HashMap<>();
+		String username = form.getUsername();
+		if(username == null || username.trim().isEmpty()) {
+			errors.put("username", "用户名不能为空！");
+		}else if(username.length() < 3 || username.length() > 10) {
+			errors.put("username", "用户名长度必须在3-10之间");
+		}
+		
+		String password = form.getPassword();
+		if(password == null || password.trim().isEmpty()) {
+			errors.put("password", "密码不能为空！");
+		}else if(password.length() < 3 || password.length() > 10) {
+			errors.put("password", "密码长度必须在3-10之间");
+		}
+		
+		String email = form.getEmail();
+		if(email == null || email.trim().isEmpty()) {
+			errors.put("email", "邮箱不能为空！");
+		}else if(email.matches("\\w+@\\w\\.\\w")) {
+			errors.put("email", "Email格式错误！");
+		}
+	}
+}

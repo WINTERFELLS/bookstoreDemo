@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="seu.edu.zookeeperDemo.chapter05.Zookeeper_Constructor_Usage_Simple"/>
+<fullyQualifiedTypeName name="org.apache.zookeeper.Watcher.Event"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.util.concurrent.CountDownLatch"/>
+<fullyQualifiedTypeName name="ZookeeperDemo.chapter05Demo.Zookeeper_Constructor_Usage_With_SID_PASSWD"/>
+<fullyQualifiedTypeName name="org.apache.zookeeper.ZooKeeper"/>
+<fullyQualifiedTypeName name="ZookeeperDemo.chapter05Demo.Zookeeper_Create_API_Sync_Usage"/>
+<fullyQualifiedTypeName name="org.apache.zookeeper.ZooDefs.Ids"/>
+<fullyQualifiedTypeName name="org.apache.zookeeper.CreateMode"/>
+<fullyQualifiedTypeName name="org.apache.zookeeper.Watcher.Event.KeeperState"/>
+<fullyQualifiedTypeName name="java.util.LinkedHashMap"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="com.edu.seu.dpf.bookstore.cart.domain.CartItem"/>
+<fullyQualifiedTypeName name="com.edu.seu.dpf.bookstore.book.domain.Book"/>
+<fullyQualifiedTypeName name="java.math.BigDecimal"/>
+<fullyQualifiedTypeName name="cn.itcast.servlet.BaseServlet"/>
+<fullyQualifiedTypeName name="javax.mail.Session"/>
+<fullyQualifiedTypeName name="com.edu.seu.dpf.bookstore.cart.domain.Cart"/>
+</qualifiedTypeNameHistroy>

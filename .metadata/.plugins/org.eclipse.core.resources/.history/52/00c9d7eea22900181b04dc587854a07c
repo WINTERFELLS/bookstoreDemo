@@ -1,0 +1,5 @@
+package com.edu.seu.dpf.bookstore.cart.domain;
+
+public class Cart {
+
+}

@@ -1,0 +1,9 @@
+package com.edu.seu.dpf.bookstore.cart.domain;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class Cart {
+	private Map<String, CartItem> map = new LinkedHashMap<>();
+	
+}

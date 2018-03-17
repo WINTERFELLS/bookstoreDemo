@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+/home/dpf/eclipse/workspace/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+255081384.index
+917059877.index
+2770589393.index
+3842079874.index
+2538724334.index
+1685858494.index

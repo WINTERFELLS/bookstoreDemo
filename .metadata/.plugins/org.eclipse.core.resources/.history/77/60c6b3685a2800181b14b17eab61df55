@@ -1,0 +1,9 @@
+package com.edu.seu.dpf.bookstore.category.web.servlet;
+
+import javax.servlet.http.HttpServlet;
+
+import com.edu.seu.dpf.bookstore.category.service.CategoryService;
+
+public class CategoryServlet extends HttpServlet{
+	private CategoryService categoryService = new CategoryService();
+}

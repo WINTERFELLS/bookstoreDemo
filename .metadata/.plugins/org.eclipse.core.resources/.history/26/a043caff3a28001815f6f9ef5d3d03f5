@@ -1,0 +1,3 @@
+from=734860108@qq.com
+subject="这是来自书城的激活邮件"
+content=<a href="http://localhost:8080/bookstore/UserServlet?method=active"&code={0}>点击完成激活</a>

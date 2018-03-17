@@ -1,0 +1,5 @@
+package com.edu.seu.dpf.bookstore.category.dao;
+
+public class CategoryDao {
+
+}

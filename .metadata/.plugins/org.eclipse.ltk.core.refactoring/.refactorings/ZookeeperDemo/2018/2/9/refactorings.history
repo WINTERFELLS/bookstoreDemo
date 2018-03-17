@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Zookeeper_Constructor_Usage_Simple.java&apos; to &apos;chapter05Demo/src/main/java/ZookeeperDemo.chapter05Demo&apos;&#x0A;- Original project: &apos;ZookeeperDemo&apos;&#x0A;- Destination element: &apos;chapter05Demo/src/main/java/ZookeeperDemo.chapter05Demo&apos;&#x0A;- Original element: &apos;seu.edu.zookeeperDemo.chapter05.Zookeeper_Constructor_Usage_Simple.java&apos;" description="Copy compilation unit" destination="=chapter05Demo/src\/main\/java&lt;ZookeeperDemo.chapter05Demo" element1="/src&lt;seu.edu.zookeeperDemo.chapter05{Zookeeper_Constructor_Usage_Simple.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1519805494476" units="1" version="1.0"/>
+</session>

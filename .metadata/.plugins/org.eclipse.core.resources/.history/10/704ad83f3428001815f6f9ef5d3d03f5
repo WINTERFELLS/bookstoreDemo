@@ -1,0 +1,5 @@
+package com.edu.seu.dpf.bookstore.user.service;
+
+public class UserException extends Exception {
+
+}

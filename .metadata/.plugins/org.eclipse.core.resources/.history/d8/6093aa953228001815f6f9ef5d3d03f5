@@ -1,0 +1,12 @@
+package com.edu.seu.dpf.bookstore.user.dao;
+
+import org.apache.commons.dbutils.QueryRunner;
+
+import cn.itcast.jdbc.TxQueryRunner;
+
+/*
+ * User持久层
+ */
+public class UserDao {
+	private QueryRunner qr = new TxQueryRunner();
+}
