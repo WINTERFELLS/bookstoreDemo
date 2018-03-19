@@ -1280,3 +1280,4 @@
 2018-03-17 13:58:04,729 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2018-03-17 13:58:04,729 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/dpf/eclipse/workspace/dubbo-spring-boot-mybatis-redis-master/dearbinge-client-test/src/test/resources
 2018-03-17 14:11:18,189 [Worker-5] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2018-03-17 14:35:53,596 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

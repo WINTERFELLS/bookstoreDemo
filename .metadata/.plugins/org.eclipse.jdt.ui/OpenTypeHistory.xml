@@ -1,2 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+<typeInfo handle="=booksotre/\/home\/dpf\/eclipse\/workspace\/booksotre\/WebContent\/WEB-INF\/lib\/itcast-tools-1.4.2.jar&lt;cn.itcast.servlet(BaseServlet.class[BaseServlet" modifiers="33" timestamp="1521102505000"/>
+<typeInfo handle="=booksotre/\/usr\/lib\/jvm\/java-8-oracle\/jre\/lib\/rt.jar&lt;java.lang(Exception.class[Exception" modifiers="33" timestamp="1519629508000"/>
+</typeInfoHistroy>

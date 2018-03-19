@@ -16,7 +16,7 @@ public class BookService {
 		return bookDao.findByCategory(cid);
 	}
 	
-	public Book findBookByBid(String bid){
+	public Book load(String bid){
 		return bookDao.findByBid(bid);
 	}
 }

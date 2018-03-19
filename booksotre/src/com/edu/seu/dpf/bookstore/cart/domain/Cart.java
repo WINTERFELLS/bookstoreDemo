@@ -8,7 +8,7 @@ import java.util.Map;
 public class Cart {
 	private Map<String, CartItem> map = new LinkedHashMap<>();
 	
-	public double getToatl() {
+	public double getTotal() {
 		BigDecimal total = new BigDecimal("0");
 		for (CartItem cartItem : map.values()) {
 			BigDecimal subTotal = new BigDecimal("" + cartItem.getSubtoatl());

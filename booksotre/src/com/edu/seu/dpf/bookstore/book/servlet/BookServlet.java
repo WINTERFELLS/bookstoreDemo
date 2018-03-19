@@ -29,7 +29,7 @@ public class BookServlet extends BaseServlet {
 	
 	public String load(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		request.setAttribute("bookList", bookService.findBookByBid(request.getParameter("bid")));
+		request.setAttribute("bookList", bookService.load(request.getParameter("bid")));
 		return "f:/jsps/book/desc.jsp";
 	}
 }

@@ -51,7 +51,7 @@ SELECT * FROM book;
 CREATE TABLE orders (
   oid CHAR(32) PRIMARY KEY,/*主键*/
   ordertime DATETIME,/*订单生成时间*/
-  total DECIMAL(10,0),/*订单合计*/
+  total DECIMAL(10,2),/*订单合计*/
   state SMALLINT(1),/*订单状态：未付款、已付款但未发货、已发货但未确认收货、收货已结束*/
   uid CHAR(32),/*订单的主人*/
   address VARCHAR(200),/*订单的收货地址*/
@@ -64,7 +64,7 @@ SELECT * FROM orders;
 CREATE TABLE orderitem (
   iid CHAR(32) PRIMARY KEY,/*主键*/
   `count` INT,/*数量*/orderitem
-  subtotal DECIMAL(10,0),/*小计*/
+  subtotal DECIMAL(10,2),/*小计*/
   oid CHAR(32),/*所属订单*/
   bid CHAR(32),/*订单项所指的商品*/
   FOREIGN KEY (oid) REFERENCES orders (oid),/*建立主外键关系*/
