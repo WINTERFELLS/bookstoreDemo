@@ -1,5 +1,10 @@
 package com.edu.seu.dpf.bookstore.user.servlet;
 
+import cn.itcast.mail.Mail;
+import cn.itcast.mail.MailUtils;
+import cn.itcast.servlet.BaseServlet;
+import cn.itcast.utils.CommonUtils;
+
 import java.io.IOException;
 import java.text.MessageFormat;
 import java.util.HashMap;
@@ -9,6 +14,7 @@ import java.util.Properties;
 import javax.mail.MessagingException;
 import javax.mail.Session;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,15 +23,13 @@ import com.edu.seu.dpf.bookstore.user.domain.User;
 import com.edu.seu.dpf.bookstore.user.service.UserException;
 import com.edu.seu.dpf.bookstore.user.service.UserService;
 
-import cn.itcast.commons.CommonUtils;
-import cn.itcast.mail.Mail;
-import cn.itcast.mail.MailUtils;
-import cn.itcast.servlet.BaseServlet;
-
-/*
- * User表述层
+/**
+ * Servlet implementation class UserServlet
  */
+@WebServlet("/UserServlet")
 public class UserServlet extends BaseServlet {
+	private static final long serialVersionUID = 1L;
+
 	private UserService userService = new UserService();
 	
 	public String login(HttpServletRequest request, HttpServletResponse response) 

@@ -49,4 +49,11 @@ public class OrderService {
 			orderDao.updatestate(oid, 4);
 		}
 	}
+
+	public void pay(String oid) {
+		int state = orderDao.getStateByOid(oid);
+		if(state == 1) {
+			orderDao.updatestate(oid, 2);
+		}
+	}
 }

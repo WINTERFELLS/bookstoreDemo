@@ -19,4 +19,8 @@ public class BookService {
 	public Book load(String bid){
 		return bookDao.findByBid(bid);
 	}
+
+	public void add(Book book) {
+		bookDao.add(book);
+	}
 }

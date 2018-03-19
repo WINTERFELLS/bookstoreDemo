@@ -58,9 +58,11 @@
   <ul>
     <li>书名：${book.bname }</li>
     <li>作者：${book.author }</li>
-    <li>单价：${book.price }</li>
+    <li>单价：${book.price }元</li>
   </ul>
-  <form id="form" action="<c:url value='/jsps/cart/list.jsp'/>" method="post">
+  <form id="form" action="<c:url value='/CartServlet'/>" method="post">
+  	<input type="hidden" name="method" value="add"/>
+  	<input type="hidden" name="bid" value="${book.bid }">
   	<input type="text" size="3" name="count" value="1"/>
   </form>
   <a href="javascript:document.getElementById('form').submit();"></a>

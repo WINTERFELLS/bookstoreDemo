@@ -1,18 +1,24 @@
 package com.edu.seu.dpf.bookstore.book.servlet;
 
+import cn.itcast.servlet.BaseServlet;
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.edu.seu.dpf.bookstore.book.service.BookService;
 
-import cn.itcast.servlet.BaseServlet;
-
+/**
+ * Servlet implementation class BookServlet
+ */
+@WebServlet("/BookServlet")
 public class BookServlet extends BaseServlet {
-
-	private BookService bookService = new BookService();
+	private static final long serialVersionUID = 1L;
+	
+	BookService bookService = new BookService();
 	
 	public String findAll(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
