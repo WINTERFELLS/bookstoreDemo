@@ -1,13 +1,8 @@
 INDEX VERSION 1.4+/home/dpf/eclipse/workspace/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+3842079874.index
+1576870317.index
+2538724334.index
+1685858494.index
+917059877.index
 2770589393.index
 255081384.index
-3684647148.index
-2538724334.index
-3842079874.index
-1288291679.index
-1386142478.index
-2376180255.index
-3684647148.index
-1685858494.index
-1288291679.index
-917059877.index

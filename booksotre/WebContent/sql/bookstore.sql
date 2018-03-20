@@ -32,6 +32,7 @@ CREATE TABLE book (
   author VARCHAR(20),/*作者*/
   image VARCHAR(200),/*图片*/
   cid CHAR(32),/*所属分类*/
+  del boolean(false),/*图书是否删除的标记*/
   FOREIGN KEY (cid) REFERENCES category(cid)/*建立主外键关系*/
 );
 

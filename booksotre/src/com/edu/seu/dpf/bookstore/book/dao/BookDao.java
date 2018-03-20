@@ -22,7 +22,7 @@ public class BookDao {
 	
 	public List<Book> findAll(){
 		try {
-			String sql = "select * from book";
+			String sql = "select * from book where del=false";
 			return qr.query(sql, new BeanListHandler<Book>(Book.class));
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -31,7 +31,7 @@ public class BookDao {
 	
 	public List<Book> findByCategory(String cid){
 		try {
-			String sql = "select * from book where cid=?";
+			String sql = "select * from book where cid=? and del=false";
 			return qr.query(sql, new BeanListHandler<Book>(Book.class), cid);
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -69,6 +69,26 @@ public class BookDao {
 			String sql = "insert into book values(?,?,?,?,?,?)";;
 			Object[] params = {book.getBid(), book.getBname(), book.getPrice(),
 					book.getAuthor(), book.getImage(), book.getCategory()};
+			qr.update(sql, params);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	public void delete(String bid) {
+		try {
+			String sql = "update book set del=true where bid=?";
+			qr.update(sql, bid);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	public void mod(Book book) {
+		try {
+			String sql = "update book set bname=?, price=?, author=?, image=?, cid=? where bid=?";
+			Object[] params= {book.getBname(), book.getPrice(), book.getAuthor(), book.getImage(),
+					book.getCategory().getCid(), book.getBid()};
 			qr.update(sql, params);
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
