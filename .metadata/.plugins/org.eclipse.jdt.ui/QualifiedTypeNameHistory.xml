@@ -56,4 +56,5 @@
 <fullyQualifiedTypeName name="com.edu.seu.dpf.bookstore.category.domain.Category"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="com.edu.seu.dpf.bookstore.user.domain.User"/>
+<fullyQualifiedTypeName name="org.apache.naming.factory.BeanFactory"/>
 </qualifiedTypeNameHistroy>
