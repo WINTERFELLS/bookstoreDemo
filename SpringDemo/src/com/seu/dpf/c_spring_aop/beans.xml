@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+     					   http://www.springframework.org/schema/beans/spring-beans.xsd
+     					   http://www.springframework.org/schema/aop  
+     					   http://www.springframework.org/schema/aop/spring-aop.xsd">
+     
+    <!-- 创建目标类 -->
+	<bean id="userServiceId" class="com.seu.dpf.c_spring_aop.UserServiceImpl"></bean>
+	<!-- 创建切面类 -->
+	<bean id="myAspectId" class="com.seu.dpf.c_spring_aop.MyAspect"></bean>
+	<!-- aop编程
+		导入命名空间
+		使用aop:config进行配置,切入点pointcut和特殊的切面advisor（一个通知和一个切入点）
+		切入点表达式
+	 -->
+	<aop:config>
+		<aop:pointcut expression="execution(* com.seu.dpf.c_spring_aop.UserServiceImpl.*(..))" id="myPointCut"/>
+		<aop:advisor advice-ref="myAspectId" pointcut-ref="myPointCut"/>
+	</aop:config>
+</beans>

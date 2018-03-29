@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+     					   http://www.springframework.org/schema/beans/spring-beans.xsd">
+     
+    <!-- 创建目标类 -->
+	<bean id="userServiceId" class="com.seu.dpf.b_factory_bean.UserServiceImpl"></bean>
+	<!-- 创建切面类 -->
+	<bean id="myAspectId" class="com.seu.dpf.b_factory_bean.MyAspect"></bean>
+	<!-- 创建代理类
+		*使用工厂bean FactoryBean 调用getObject 返回特殊的bean
+		*ProxyFactoryBean用于创建代理工厂bean 生成代理对象
+	 -->
+	<bean id="proxyServiceId" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="interfaces" value="com.seu.dpf.b_factory_bean.UserService"></property>
+		<property name="target" ref="userServiceId"></property>
+		<property name="interceptorNames" value="myAspectId"></property>
+	</bean>
+</beans>
