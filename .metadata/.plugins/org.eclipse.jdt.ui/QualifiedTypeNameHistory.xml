@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.apache.commons.dbutils.handlers.BeanListHandler"/>
-<fullyQualifiedTypeName name="org.apache.commons.dbutils.handlers.MapListHandler"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="com.edu.seu.dpf.bookstore.order.domain.OrderItem"/>
-<fullyQualifiedTypeName name="com.edu.seu.dpf.bookstore.order.dao.OrderDao"/>
-<fullyQualifiedTypeName name="java.sql.SQLException"/>
-<fullyQualifiedTypeName name="com.edu.seu.dpf.bookstore.order.service.OrderException"/>
-<fullyQualifiedTypeName name="com.edu.seu.dpf.bookstore.book.dao.BookDao"/>
-<fullyQualifiedTypeName name="com.edu.seu.dpf.bookstore.category.web.servlet.admin.CategoryException"/>
 <fullyQualifiedTypeName name="org.apache.commons.dbutils.handlers.ScalarHandler"/>
 <fullyQualifiedTypeName name="org.apache.commons.dbutils.handlers.BeanHandler"/>
 <fullyQualifiedTypeName name="com.edu.seu.dpf.bookstore.book.service.BookService"/>
@@ -51,8 +42,6 @@
 <fullyQualifiedTypeName name="org.springframework.cglib.proxy.Enhancer"/>
 <fullyQualifiedTypeName name="org.springframework.cglib.proxy.MethodInterceptor"/>
 <fullyQualifiedTypeName name="org.aopalliance.intercept.MethodInterceptor"/>
-<fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
-<fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
 <fullyQualifiedTypeName name="org.aspectj.lang.annotation.Aspect"/>
@@ -60,4 +49,15 @@
 <fullyQualifiedTypeName name="org.aspectj.lang.annotation.Pointcut"/>
 <fullyQualifiedTypeName name="org.aspectj.lang.ProceedingJoinPoint"/>
 <fullyQualifiedTypeName name="org.aspectj.lang.annotation.After"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="org.springframework.jdbc.core.support.JdbcDaoSupport"/>
+<fullyQualifiedTypeName name="com.seu.dpf.transcation.dao.AccountDao"/>
+<fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
+<fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
+<fullyQualifiedTypeName name="org.springframework.context.support.ClassPathXmlApplicationContext"/>
+<fullyQualifiedTypeName name="com.seu.dpf.transcation.service.AccountService"/>
+<fullyQualifiedTypeName name="org.springframework.transaction.support.TransactionTemplate"/>
+<fullyQualifiedTypeName name="org.springframework.transaction.support.TransactionCallback"/>
+<fullyQualifiedTypeName name="org.springframework.transaction.support.TransactionCallbackWithoutResult"/>
+<fullyQualifiedTypeName name="com.seu.dpf.transcation.semiauto.service.AccountService"/>
 </qualifiedTypeNameHistroy>
